@@ -7,9 +7,6 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-
-
-
 export default function({data = {head : [], rows:[]}}) {
   return (
     <TableContainer component={Paper}  sx={{ maxWidth: 850 }}>
@@ -22,10 +19,8 @@ export default function({data = {head : [], rows:[]}}) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {data.rows.map((row) => (
-            <TableRow
-              key={row.category}
-            >
+          {data.rows.map((row, idx) => (
+            <TableRow key={idx} >
               {
                 Object.values(row).map(
                   (value, idx) => {
