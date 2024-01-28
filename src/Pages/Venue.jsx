@@ -1,9 +1,11 @@
 import React from 'react';
-import {Container} from "@mui/material";
+import {Container, Typography} from "@mui/material";
 
 function Venue(props) {
     return (
-        <Container><div>Venue</div></Container>
+        <Container maxWidth="sx">
+            <Typography variant="h3">Venue</Typography>
+        </Container>
     );
 }
 
