@@ -14,17 +14,17 @@ import {
 import './index.css'
 import Homepage from "./Pages/Homepage";
 import NavBar from "./Components/NavBar";
-import Submission from "./Pages/Submission";
 import Registration from "./Pages/Registration";
 import Publication from "./Pages/Publication";
 import Program from "./Pages/Program";
 import Venue from "./Pages/Venue";
 import Contact from "./Pages/Contact";
 import About from "./Pages/About";
+import QuickLinks from "./Pages/Quicklinks";
 
 const router = createBrowserRouter([{element : <Layout />, children : [{path : "/", element : <Homepage />, },
         {path : "/about", element : <About />},
-        {path : "/submission", element : <Submission />},
+        {path : "/quicklinks", element : <QuickLinks />},
         {path : "/registration", element : <Registration />},
         {path : "/publication", element : <Publication />},
         {path : "/program", element : <Program />},

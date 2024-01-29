@@ -9,6 +9,12 @@ import {
     TimelineSeparator,
     TimelineContent
 } from "@mui/lab";
+import CustomBreadcrumbs from "../Components/BreadCrums";
+
+const breadcrumbs = [
+    {name: "Home", href: "/"},
+    {name: "Program", href: "/program"}
+]
 
 const times = [{time: "09:00 to 09:30", program: "Inauguration"}, {
     time: "09:00 to 09:30",
@@ -25,23 +31,26 @@ const times = [{time: "09:00 to 09:30", program: "Inauguration"}, {
 
 function Program(props) {
     return (
-        <Container maxWidth="sm" >
-            <Box width="100%" sx={{textAlign: "center"}} paddingTop={3}>
-            <Typography variant="h6">February 3, 2024</Typography>
-            </Box>
-            <Timeline position="alternate">
-                {times.map((item, idx) => <TimelineItem>
-                    <TimelineOppositeContent color="text.secondary">
-                        {item.time}
-                    </TimelineOppositeContent>
-                    <TimelineSeparator>
-                        <TimelineDot/>
-                        {idx === times.length - 1 ? null : <TimelineConnector/>}
-                    </TimelineSeparator>
-                    <TimelineContent sx={{fontWeight: 'bold'}}>{item.program}</TimelineContent>
-                </TimelineItem>)}
-            </Timeline>
-        </Container>
+        <React.Fragment>
+            <CustomBreadcrumbs breadcrumbsInfo={breadcrumbs}/>
+            <Container maxWidth="sm">
+                <Box width="100%" sx={{textAlign: "center"}} paddingTop={3}>
+                    <Typography variant="h6">February 3, 2024</Typography>
+                </Box>
+                <Timeline position="alternate">
+                    {times.map((item, idx) => <TimelineItem>
+                        <TimelineOppositeContent color="text.secondary">
+                            {item.time}
+                        </TimelineOppositeContent>
+                        <TimelineSeparator>
+                            <TimelineDot/>
+                            {idx === times.length - 1 ? null : <TimelineConnector/>}
+                        </TimelineSeparator>
+                        <TimelineContent sx={{fontWeight: 'bold'}}>{item.program}</TimelineContent>
+                    </TimelineItem>)}
+                </Timeline>
+            </Container>
+        </React.Fragment>
     );
 }
 
