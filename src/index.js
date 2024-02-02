@@ -6,6 +6,7 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
+import { ThemeProvider, createTheme } from '@mui/material';
 import {
     createBrowserRouter,
     RouterProvider, Outlet
@@ -31,6 +32,12 @@ const router = createBrowserRouter([{element : <Layout />, children : [{path : "
         {path : "/venue", element : <Venue />},
         {path : "/contact", element : <Contact />}]}])
 
+const theme = createTheme({
+    typography: {
+        fontFamily : "'Sora', sans-serif",
+        fontSize : 16
+    }
+})
 function Layout() {
     return <React.Fragment>
         <NavBar />
@@ -41,7 +48,9 @@ function Layout() {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+      <ThemeProvider theme={theme}>
       <RouterProvider router={router} />
+      </ThemeProvider>
   </React.StrictMode>
 );
 

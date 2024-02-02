@@ -9,7 +9,7 @@ import {
     ListItemText,
     Drawer,
     AppBar,
-    Toolbar, IconButton, Button
+    Toolbar, IconButton, Button, useMediaQuery
 } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import {Link} from "react-router-dom";
@@ -21,6 +21,7 @@ const navItems = ['Home', 'About', 'Quicklinks', 'Registration', 'Publication', 
 function NavBar(props) {
     const {window} = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
+    const isSmallScreen = useMediaQuery("(min-width:1000px)");
 
     const handleDrawerToggle = () => {
         setMobileOpen((prevState) => !prevState);
@@ -50,33 +51,37 @@ function NavBar(props) {
     return (
         <Box sx={{display: 'flex'}}>
             <AppBar component="nav" position="relative" color="default" sx={{boxShadow: 0}}>
-                <Toolbar>
-                    <IconButton
-                        color="inherit"
-                        aria-label="open drawer"
-                        edge="start"
-                        onClick={handleDrawerToggle}
-                        sx={{mr: 2, display: {sm: 'none'}}}
-                    >
-                        <MenuIcon sx={{paddingRight: "10px"}}/>
-                    </IconButton>
-                    <Typography variant="h6" sx={{mr: 2, display: {sm: 'none'}}}>SNIST CONFERENCE</Typography>
-                    <Typography
+                <Toolbar> {isSmallScreen}
+                    {!isSmallScreen ? <><IconButton
+                            color="inherit"
+                            aria-label="open drawer"
+                            edge="start"
+                            onClick={handleDrawerToggle}
+                            // sx={{mr: 2, display: {sm: 'none'}}}
+                        >
+                            <MenuIcon sx={{paddingRight: "10px"}}/>
+                        </IconButton>
+                        <Typography variant="h6"
+                            // sx={{mr: 2, display: {sm: 'none'}}}
+                        >ICRECA 2024</Typography></> : <><Typography
                         variant="h6"
                         component="div"
-                        sx={{flexGrow: 1, display: {xs: 'none', sm: 'block'}}}
+                        sx={{flexGrow: 1, }}
                     >
-                        SNIST CONFERENCE
+                        ICRECA - 2024
                     </Typography>
-                    <Box sx={{display: {xs: 'none', sm: 'block'}}}>
-                        {navItems.map((item) => (
-                            <Link to={item === 'Home' ? "" : item.toLowerCase()}>
-                                <Button key={item}>
-                                    {item}
-                                </Button>
-                            </Link>
-                        ))}
-                    </Box>
+                        <Box
+                            // sx={{display: {xs: 'none', sm: 'block'}}}
+                        >
+                            {navItems.map((item) => (
+                                <Link to={item === 'Home' ? "" : item.toLowerCase()}>
+                                    <Button key={item}>
+                                        {item}
+                                    </Button>
+                                </Link>
+                            ))}
+                        </Box></>}
+
                 </Toolbar>
             </AppBar>
             <nav>
@@ -89,8 +94,8 @@ function NavBar(props) {
                         keepMounted: true,
                     }}
                     sx={{
-                        display: {xs: 'block', sm: 'none'},
-                        '& .MuiDrawer-paper': {boxSizing: 'border-box', width: drawerWidth},
+                        // display: {xs: 'block', sm: 'none'},
+                        '& .MuiDrawer-paper': {boxSizing: 'border-box', width: "50vw"},
                     }}
                 >
                     {drawer}

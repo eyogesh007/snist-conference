@@ -6,7 +6,7 @@ import Table from "../Components/Table"
 
 function Registration(props) {
     const theme = useTheme();
-    const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+    const isSmallScreen = useMediaQuery("(min-width:1000px)");
     const fontSize = isSmallScreen ? '2rem' : '3rem'; 
 
     const  breadcrumbs= [
@@ -43,6 +43,7 @@ function Registration(props) {
         <CustomBreadcrumbs breadcrumbsInfo={breadcrumbs}/>
         <Container>
             <Box>
+                {fontSize}
                 <Typography variant="h3" sx={{fontWeight: "bold"}} paddingY={2} align='center' fontSize={fontSize}>
                     Conference Registration
                 </Typography>

@@ -2,8 +2,8 @@ import * as React from 'react';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import { Container, Box } from '@mui/material';
 import Link from '@mui/material/Link';
-import Stack from '@mui/material/Stack';
 import backgroundImage from "../../src/assets/images/breadcrumbs-bg.png"
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 
 function handleClick(event) {
   event.preventDefault();
@@ -27,19 +27,17 @@ export default function CustomBreadcrumbs({breadcrumbsInfo = []}) {
             opacity: 1,
             backgroundColor: 'rgba(0, 0, 0, 0.5)',
             width: '100%',
-            height: '15vh',
+            height: '130px',
         }}
     >
-        <Container>
-            <Stack spacing={2} paddingY={5}>
-                <Breadcrumbs separator="/" aria-label="breadcrumb" sx={{
+        <Container sx={{height : "100%", display : "flex", alignItems: "center"}} >
+                <Breadcrumbs separator={<NavigateNextIcon fontSize="small" />}  aria-label="breadcrumb" sx={{
                     color : "white",
                     fontWeight : 500,
-                    fontSize : "18px"
-                }}>
+                    fontSize : "18px",
+paddingLeft : 2      }}>
                     {breadcrumbs}
                 </Breadcrumbs>
-            </Stack>
         </Container>
     </Box>
   );
