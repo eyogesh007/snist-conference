@@ -1,6 +1,11 @@
 import React from 'react';
 import { Container, Typography, Box, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from "@mui/material";
+import CustomBreadcrumbs from "../Components/BreadCrums";
 
+const  breadcrumbs= [
+    {name : "Home", href: "/"},
+    {name : "committee", href: "/committee"}
+]
 const CommitteeTable = ({ section, members }) => (
     <Box my={4} >
         <TableContainer component={Paper} sx={{ background: '#e6f7ff', width: '100%' }}>
@@ -132,6 +137,8 @@ const Committee = () => {
 
     return (
         <React.Fragment>
+                <CustomBreadcrumbs breadcrumbsInfo={breadcrumbs}/>
+
             <Container maxWidth="lg">
                 <Box width="100%" sx={{ textAlign: "center" }} paddingTop={3}>
                     <Typography variant="h6">Details of the Committee:</Typography>

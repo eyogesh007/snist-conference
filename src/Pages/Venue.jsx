@@ -1,6 +1,11 @@
 import React from 'react';
 import { styled } from '@mui/system';
+import CustomBreadcrumbs from "../Components/BreadCrums";
 
+const  breadcrumbs= [
+    {name : "Home", href: "/"},
+    {name : "venue", href: "/venue"}
+]
 const StyledConferenceAnnouncement = styled('div')({
   maxWidth: '85%',
   margin: 'auto',
@@ -21,7 +26,8 @@ const Paragraph = styled('p')({
   lineHeight: 1.6,
 });
 const App = () => (
-    <>   <br></br>
+    <>           <CustomBreadcrumbs breadcrumbsInfo={breadcrumbs}/>
+    <br></br>
     <br></br> <StyledConferenceAnnouncement>
     <Heading>We are thrilled to announce the venue of our International Conference on
 Recent trends in Electrical and Computer Applications ICRECA-2024!</Heading>
