@@ -22,9 +22,10 @@ import Venue from "./Pages/Venue";
 import Contact from "./Pages/Contact";
 import About from "./Pages/About";
 import QuickLinks from "./Pages/Quicklinks";
-
+import Committee from "./Pages/committee";
 const router = createBrowserRouter([{element : <Layout />, children : [{path : "/", element : <Homepage />, },
         {path : "/about", element : <About />},
+        {path : "/committee", element : <Committee />},
         {path : "/quicklinks", element : <QuickLinks />},
         {path : "/registration", element : <Registration />},
         {path : "/publication", element : <Publication />},
