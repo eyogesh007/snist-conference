@@ -12,7 +12,7 @@ import {
 } from '@mui/material';
 import { styled } from '@mui/system';
 import CustomBreadcrumbs from "../Components/BreadCrums";
-
+import Footer from './Footer';
 const  breadcrumbs= [
     {name : "Home", href: "/"},
     {name : "Contact", href: "/contact"}
@@ -128,7 +128,8 @@ function Contact() {
                     </Grid>
                 </Grid>
             </Box>
-        </ContactContainer>
+        </ContactContainer><br></br><br></br>
+        <Footer></Footer>
         </React.Fragment>
     );
 }

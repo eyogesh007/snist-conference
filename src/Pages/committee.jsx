@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Typography, Box, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from "@mui/material";
 import CustomBreadcrumbs from "../Components/BreadCrums";
-
+import Footer from './Footer';
 const  breadcrumbs= [
     {name : "Home", href: "/"},
     {name : "committee", href: "/committee"}
@@ -148,6 +148,7 @@ const Committee = () => {
                     <CommitteeTable key={index} section={committee.section} members={committee.members} />
                 ))}
             </Container>
+            <Footer></Footer>
         </React.Fragment>
     );
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { styled } from '@mui/system';
 import CustomBreadcrumbs from "../Components/BreadCrums";
-
+import Footer from './Footer';
 const  breadcrumbs= [
     {name : "Home", href: "/"},
     {name : "venue", href: "/venue"}
@@ -51,7 +51,7 @@ Recent trends in Electrical and Computer Applications ICRECA-2024!</Heading>
   allowfullscreen=""
   loading="lazy"
   referrerpolicy="no-referrer-when-downgrade"
-></iframe></>
+></iframe><br></br><br></br><br></br><br></br><Footer></Footer></>
 );
 
 export default App;

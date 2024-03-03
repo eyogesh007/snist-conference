@@ -4,7 +4,7 @@ import CustomBreadcrumbs from "../Components/BreadCrums";
 import {Table, TableRow, TableCell, TableContainer} from "@mui/material";
 import TableHead from "@mui/material/TableHead";
 import TableBody from "@mui/material/TableBody";
-
+import Footer from './Footer';
 
 const breadcrumbs = [
     {name: "Home", href: "/"},
@@ -53,7 +53,9 @@ const Publication = () => {
                     </Table>
                     <Typography variant="caption">INR and $ for National and International participants respectively</Typography>
                 </TableContainer>
-            </Container>
+                <br></br>
+            </Container><br></br><br></br>
+            <Footer></Footer>
         </React.Fragment>
     );
 };

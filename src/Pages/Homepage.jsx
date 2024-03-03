@@ -2,11 +2,17 @@ import React from 'react';
 import {Box, Button, Container, Divider, ListItem, ListItemText, Stack, Typography, List} from "@mui/material";
 import BannerItem from "../Components/BannerItem";
 import {CalendarMonth, LocationCity, MyLocation, Phone} from "@mui/icons-material";
-
+import Footer from './Footer';
 function Homepage(props) {
-    return (
+    return (<>
         <Container>
-            <Box>
+            <Box><br></br><div style={{maxWidth: '120%',
+  margin: 'auto',
+  padding: 20,
+  background: 'white',
+  borderRadius: 12,
+  boxShadow: '8px 8px 8px 8px rgba(0, 0, 0, 0.1)',
+  textAlign: 'center',}}>
                 <Typography variant="h4" sx={{fontWeight: "bold", paddingTop: 2}}>International Conference on
                     Recent trends in Electrical and Computer Applications
                 </Typography>
@@ -19,8 +25,8 @@ function Homepage(props) {
                        justifyContent="space-evenly">
                     <BannerItem Icon={<CalendarMonth/>} category="Conference Date" content="10-11th May 2024"/>
                     <BannerItem Icon={<MyLocation/>} category="Conference Venue" content="SNIST, Hyderabad"/>
-                    <BannerItem Icon={<Phone/>} category="Contact" content="8763630137"/>
-                </Stack>
+                    <BannerItem Icon={<Phone/>} category="Contact" content="+919437615586"/>
+                </Stack></div>
                 <Typography variant="h4" sx={{fontWeight: "bold"}} paddingY={2}>
                     Welcome to conference
                 </Typography>
@@ -72,8 +78,9 @@ function Homepage(props) {
                             the country</ListItemText>
                     </ListItem>
                 </List>
-            </Box>
-        </Container>
+            </Box><br></br>
+           
+        </Container><br></br><br></br> <Footer></Footer></>
     );
 }
 
