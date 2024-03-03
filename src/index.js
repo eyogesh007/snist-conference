@@ -23,14 +23,18 @@ import Contact from "./Pages/Contact";
 import About from "./Pages/About";
 import QuickLinks from "./Pages/Quicklinks";
 import Committee from "./Pages/committee";
+import Papers from "./Pages/Papers";
+import Speakers from "./Pages/speakers";
 const router = createBrowserRouter([{element : <Layout />, children : [{path : "/", element : <Homepage />, },
         {path : "/about", element : <About />},
         {path : "/committee", element : <Committee />},
         {path : "/quicklinks", element : <QuickLinks />},
         {path : "/registration", element : <Registration />},
         {path : "/publication", element : <Publication />},
-        {path : "/program", element : <Program />},
+       { path : "/Call for Papers", element : <Papers />},
+        {path : "/Important Dates", element : <Program />},
         {path : "/venue", element : <Venue />},
+        {path : "/speakers", element : <Speakers />},
         {path : "/contact", element : <Contact />}]}])
 
 const theme = createTheme({
