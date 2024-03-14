@@ -25,6 +25,7 @@ import QuickLinks from "./Pages/Quicklinks";
 import Committee from "./Pages/committee";
 import Papers from "./Pages/Papers";
 import Speakers from "./Pages/speakers";
+import Register from './Pages/register';
 const router = createBrowserRouter([{element : <Layout />, children : [{path : "/", element : <Homepage />, },
         {path : "/about", element : <About />},
         {path : "/committee", element : <Committee />},
@@ -35,7 +36,9 @@ const router = createBrowserRouter([{element : <Layout />, children : [{path : "
         {path : "/Important Dates", element : <Program />},
         {path : "/venue", element : <Venue />},
         {path : "/speakers", element : <Speakers />},
-        {path : "/contact", element : <Contact />}]}])
+        {path : "/contact", element : <Contact />},
+        {path : "/register", element : <Register />},
+        ]}])
 
 const theme = createTheme({
     typography: {
